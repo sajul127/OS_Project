@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{735DAF0D-1339-46B2-ADD8-66E597A65B64}|OS_Project\\OS_Project.vcxproj|C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{735DAF0D-1339-46B2-ADD8-66E597A65B64}|OS_Project\\OS_Project.vcxproj|solutionrelative:OS_Project\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\imgui-master\\examples\\example_win32_directx11\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:imgui-master\\examples\\example_win32_directx11\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\imgui-master\\examples\\example_win32_directx11\\main.cpp",
+              "RelativeDocumentMoniker": "imgui-master\\examples\\example_win32_directx11\\main.cpp",
+              "ToolTip": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\imgui-master\\examples\\example_win32_directx11\\main.cpp",
+              "RelativeToolTip": "imgui-master\\examples\\example_win32_directx11\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-28T08:58:43.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "test.cpp",
+              "DocumentMoniker": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\test.cpp",
+              "RelativeDocumentMoniker": "OS_Project\\test.cpp",
+              "ToolTip": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\test.cpp",
+              "RelativeToolTip": "OS_Project\\test.cpp",
+              "ViewState": "AgIAAOEAAAAAAAAAAAAAAO0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-28T08:01:40.491Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
