@@ -1,5 +1,6 @@
 ﻿#include "SimulatorUI.h"
 #include "PolicyFifo.h"
+#include "PolicySecondChance.h"
 
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
@@ -69,6 +70,7 @@ void SimulatorUI::Render() {
         
         switch (currentPolicyIdx) {
             case 0: currentPolicy = new PolicyFifo(frameSize); break;
+            case 1: currentPolicy = new PolicySecondChance(frameSize); break;
             default: currentPolicy = new PolicyFifo(frameSize); break;
         }
 
@@ -119,8 +121,8 @@ void SimulatorUI::Render() {
                 for (const auto& step : history) {
                     ImGui::TableNextColumn();
                     
+                    ImU32 bgColor = 0;
                     if (step.targetRow == r) {
-                        ImU32 bgColor = 0;
                         if (step.status == PageStatus::Hit)       bgColor = IM_COL32(50, 205, 50, 255); 
                         else if (step.status == PageStatus::Fault)bgColor = IM_COL32(255, 0, 0, 255);   
                         else                                      bgColor = IM_COL32(128, 0, 128, 255); 
@@ -128,9 +130,28 @@ void SimulatorUI::Render() {
                         ImGui::TableSetBgColor(ImGuiTableBgTarget_CellBg, bgColor);
                     }
 
+                    if (currentPolicyIdx == 1 && step.clockHand == r && step.targetRow != r) {
+                        bgColor = IM_COL32(200, 200, 50, 100); // 옅은 노란색 반투명
+                    }
+
+                    if (bgColor != 0) {
+                        ImGui::TableSetBgColor(ImGuiTableBgTarget_CellBg, bgColor);
+                    }
+
                     char cellData = step.memorySnap[r];
                     if (cellData != ' ') {
-                        ImGui::Text(" %c ", cellData);
+                        if (currentPolicyIdx == 1 && !step.refBitSnap.empty()) {
+                            // Second Chance일 경우: 데이터와 함께 참조 비트 (1) 또는 (0) 출력
+                            int refBit = step.refBitSnap[r] ? 1 : 0;
+
+                            // 참조 비트가 1이면 밝은 텍스트로 강조할 수도 있습니다.
+                            if (refBit == 1) ImGui::TextColored(ImVec4(1.0f, 1.0f, 0.5f, 1.0f), "%c (1)", cellData);
+                            else ImGui::Text(" %c (0)", cellData);
+                        }
+                        else {
+                            // 일반 FIFO 등의 경우
+                            ImGui::Text(" %c ", cellData);
+                        }
                     }
                 }
             }

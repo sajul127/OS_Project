@@ -8,10 +8,13 @@ enum class PageStatus {
 };
 
 struct StepRecord {
-    char reqChar;                 
-    PageStatus status;            
-    int targetRow;                
-    std::vector<char> memorySnap; 
+    char reqChar = ' ';
+    PageStatus status = PageStatus::Fault;            
+    int targetRow = -1;                
+    std::vector<char> memorySnap;
+
+    std::vector<bool> refBitSnap; // 각 프레임의 참조 비트 상태
+    int clockHand = 0;                // 현재 시계 바늘 위치
 };
 
 class PolicyBase {

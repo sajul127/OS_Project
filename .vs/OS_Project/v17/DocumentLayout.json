@@ -1,14 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ryoung\\Desktop\\OS\\",
+  "WorkspaceRootPath": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{735DAF0D-1339-46B2-ADD8-66E597A65B64}|OS_Project\\OS_Project.vcxproj|C:\\Users\\ryoung\\Desktop\\OS\\OS_Project\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{735DAF0D-1339-46B2-ADD8-66E597A65B64}|OS_Project\\OS_Project.vcxproj|C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\SimulatorUI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{735DAF0D-1339-46B2-ADD8-66E597A65B64}|OS_Project\\OS_Project.vcxproj|solutionrelative:OS_Project\\SimulatorUI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{735DAF0D-1339-46B2-ADD8-66E597A65B64}|OS_Project\\OS_Project.vcxproj|C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\PolicySecondChance.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{735DAF0D-1339-46B2-ADD8-66E597A65B64}|OS_Project\\OS_Project.vcxproj|solutionrelative:OS_Project\\PolicySecondChance.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{735DAF0D-1339-46B2-ADD8-66E597A65B64}|OS_Project\\OS_Project.vcxproj|C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\PolicyFIFO.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{735DAF0D-1339-46B2-ADD8-66E597A65B64}|OS_Project\\OS_Project.vcxproj|solutionrelative:OS_Project\\PolicyFIFO.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{735DAF0D-1339-46B2-ADD8-66E597A65B64}|OS_Project\\OS_Project.vcxproj|C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\PolicyBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{735DAF0D-1339-46B2-ADD8-66E597A65B64}|OS_Project\\OS_Project.vcxproj|solutionrelative:OS_Project\\PolicyBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{735DAF0D-1339-46B2-ADD8-66E597A65B64}|OS_Project\\OS_Project.vcxproj|C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\PolicySecondChance.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{735DAF0D-1339-46B2-ADD8-66E597A65B64}|OS_Project\\OS_Project.vcxproj|solutionrelative:OS_Project\\PolicySecondChance.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{735DAF0D-1339-46B2-ADD8-66E597A65B64}|OS_Project\\OS_Project.vcxproj|C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\PolicyFIFO.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{735DAF0D-1339-46B2-ADD8-66E597A65B64}|OS_Project\\OS_Project.vcxproj|solutionrelative:OS_Project\\PolicyFIFO.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{735DAF0D-1339-46B2-ADD8-66E597A65B64}|OS_Project\\OS_Project.vcxproj|C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{735DAF0D-1339-46B2-ADD8-66E597A65B64}|OS_Project\\OS_Project.vcxproj|solutionrelative:OS_Project\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ryoung\\Desktop\\OS\\imgui-master\\examples\\example_win32_directx11\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:imgui-master\\examples\\example_win32_directx11\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ryoung\\Desktop\\OS\\imgui-master\\examples\\example_win32_directx11\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,33 +41,106 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PolicyFIFO.h",
+              "DocumentMoniker": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\PolicyFIFO.h",
+              "RelativeDocumentMoniker": "OS_Project\\PolicyFIFO.h",
+              "ToolTip": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\PolicyFIFO.h",
+              "RelativeToolTip": "OS_Project\\PolicyFIFO.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-30T04:03:06.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SimulatorUI.cpp",
+              "DocumentMoniker": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\SimulatorUI.cpp",
+              "RelativeDocumentMoniker": "OS_Project\\SimulatorUI.cpp",
+              "ToolTip": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\SimulatorUI.cpp",
+              "RelativeToolTip": "OS_Project\\SimulatorUI.cpp",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAqwJcAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-30T03:45:04.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PolicySecondChance.cpp",
+              "DocumentMoniker": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\PolicySecondChance.cpp",
+              "RelativeDocumentMoniker": "OS_Project\\PolicySecondChance.cpp",
+              "ToolTip": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\PolicySecondChance.cpp",
+              "RelativeToolTip": "OS_Project\\PolicySecondChance.cpp",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-30T03:33:23.768Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "PolicySecondChance.h",
+              "DocumentMoniker": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\PolicySecondChance.h",
+              "RelativeDocumentMoniker": "OS_Project\\PolicySecondChance.h",
+              "ToolTip": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\PolicySecondChance.h",
+              "RelativeToolTip": "OS_Project\\PolicySecondChance.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-30T03:32:35.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PolicyBase.h",
+              "DocumentMoniker": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\PolicyBase.h",
+              "RelativeDocumentMoniker": "OS_Project\\PolicyBase.h",
+              "ToolTip": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\PolicyBase.h",
+              "RelativeToolTip": "OS_Project\\PolicyBase.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-30T03:21:27.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PolicyFIFO.cpp",
+              "DocumentMoniker": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\PolicyFIFO.cpp",
+              "RelativeDocumentMoniker": "OS_Project\\PolicyFIFO.cpp",
+              "ToolTip": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\PolicyFIFO.cpp",
+              "RelativeToolTip": "OS_Project\\PolicyFIFO.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-29T13:29:13.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\ryoung\\Desktop\\OS\\imgui-master\\examples\\example_win32_directx11\\main.cpp",
-              "RelativeDocumentMoniker": "imgui-master\\examples\\example_win32_directx11\\main.cpp",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\ryoung\\Desktop\\OS\\imgui-master\\examples\\example_win32_directx11\\main.cpp",
               "ToolTip": "C:\\Users\\ryoung\\Desktop\\OS\\imgui-master\\examples\\example_win32_directx11\\main.cpp",
-              "RelativeToolTip": "imgui-master\\examples\\example_win32_directx11\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "RelativeToolTip": "..\\..\\..\\..\\ryoung\\Desktop\\OS\\imgui-master\\examples\\example_win32_directx11\\main.cpp",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-05-28T08:58:43.137Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "test.cpp",
-              "DocumentMoniker": "C:\\Users\\ryoung\\Desktop\\OS\\OS_Project\\test.cpp",
+              "DocumentMoniker": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\test.cpp",
               "RelativeDocumentMoniker": "OS_Project\\test.cpp",
-              "ToolTip": "C:\\Users\\ryoung\\Desktop\\OS\\OS_Project\\test.cpp",
+              "ToolTip": "C:\\Users\\rlatlgus127\\Desktop\\\uC6B4\uC601\uCCB4\uC81C\\OS_Project\\OS_Project\\test.cpp",
               "RelativeToolTip": "OS_Project\\test.cpp",
-              "ViewState": "AgIAAN4AAAAAAAAAAAAAAPcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-05-28T08:01:40.491Z",
               "EditorCaption": ""

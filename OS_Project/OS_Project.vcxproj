@@ -125,6 +125,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="PolicyFIFO.cpp" />
+    <ClCompile Include="PolicySecondChance.cpp" />
+    <ClCompile Include="PolicySecondChance.h" />
     <ClCompile Include="SimulatorUI.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="thirdparty\imgui\imgui.cpp" />
