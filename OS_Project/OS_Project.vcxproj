@@ -124,6 +124,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="PolicyNUR.cpp" />
+    <ClCompile Include="PolicyNUR.h" />
     <ClCompile Include="PolicyFIFO.cpp" />
     <ClCompile Include="PolicySecondChance.cpp" />
     <ClCompile Include="PolicySecondChance.h" />

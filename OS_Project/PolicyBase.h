@@ -12,8 +12,8 @@ struct StepRecord {
     PageStatus status = PageStatus::Fault;            
     int targetRow = -1;                
     std::vector<char> memorySnap;
-
     std::vector<bool> refBitSnap; // 각 프레임의 참조 비트 상태
+    std::vector<bool> modBitSnap;
     int clockHand = 0;                // 현재 시계 바늘 위치
 };
 
