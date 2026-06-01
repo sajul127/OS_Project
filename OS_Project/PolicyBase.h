@@ -12,9 +12,9 @@ struct StepRecord {
     PageStatus status = PageStatus::Fault;            
     int targetRow = -1;                
     std::vector<char> memorySnap;
-    std::vector<bool> refBitSnap; // 각 프레임의 참조 비트 상태
+    std::vector<bool> refBitSnap; 
     std::vector<bool> modBitSnap;
-    int clockHand = 0;                // 현재 시계 바늘 위치
+    int clockHand = 0;                
 };
 
 class PolicyBase {
@@ -33,11 +33,15 @@ public:
     virtual ~PolicyBase() = default;
 
     virtual void Operate(char data) = 0; 
+    
+    virtual void OperateWithPCs(char data, const std::vector<int>& pcs) {
+        Operate(data); 
+    }
 
     int GetHit() const { return hitCount; }
     int GetFault() const { return faultCount; }
     int GetMigration() const { return migrationCount; }
-    int GetFrameSize() const { return frameSize; } // ◀ 안전한 렌더링을 위해 추가!
+    int GetFrameSize() const { return frameSize; } 
     const std::vector<StepRecord>& GetHistory() const { return history; }
     const std::vector<float>& GetTimeData() const { return timeData; }
     const std::vector<float>& GetFaultRateData() const { return faultRateData; }

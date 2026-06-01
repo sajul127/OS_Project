@@ -127,6 +127,7 @@
     <ClCompile Include="PolicyNUR.cpp" />
     <ClCompile Include="PolicyNUR.h" />
     <ClCompile Include="PolicyFIFO.cpp" />
+    <ClCompile Include="PolicyPCSignature.cpp" />
     <ClCompile Include="PolicySecondChance.cpp" />
     <ClCompile Include="PolicySecondChance.h" />
     <ClCompile Include="SimulatorUI.cpp" />
@@ -145,6 +146,7 @@
   <ItemGroup>
     <ClInclude Include="PolicyBase.h" />
     <ClInclude Include="PolicyFIFO.h" />
+    <ClInclude Include="PolicyPCSignature.h" />
     <ClInclude Include="SimulatorUI.h" />
     <ClInclude Include="thirdparty\imgui\imconfig.h" />
     <ClInclude Include="thirdparty\imgui\imgui.h" />
