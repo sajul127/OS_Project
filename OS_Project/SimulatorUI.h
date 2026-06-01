@@ -4,7 +4,7 @@
 
 class SimulatorUI {
 private:
-    char refString[256] = "123412512345";
+    char refString[1024] = "123412512345";
     int frameSize = 4;
     int currentPolicyIdx = 0;
     bool isSimulated = false;
