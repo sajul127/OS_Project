@@ -1,6 +1,6 @@
 #include "PolicyNUR.h"
 #include <algorithm>
-#include <cctype> // std::toupper, std::islower »ç¿ë
+#include <cctype> // std::toupper, std::islower í¬í•¨
 
 PolicyNUR::PolicyNUR(int size) : PolicyBase(size) {
     frames.resize(size, ' ');
@@ -12,71 +12,72 @@ void PolicyNUR::Operate(char data) {
     StepRecord record;
     record.reqChar = data;
 
-    // ´ë¹®ÀÚ´Â 'ÀĞ±â', ¼Ò¹®ÀÚ´Â '¾²±â'·Î °£ÁÖÇÏ°í ½ÇÁ¦ ¸Ş¸ğ¸®¿¡´Â ´ë¹®ÀÚ·Î ÀûÀç
+    // ëŒ€ë¬¸ìëŠ” 'ì½ê¸°', ì†Œë¬¸ìëŠ” 'ì“°ê¸°'ë¥¼ ì˜ë¯¸í•˜ê³  í•­ìƒ ë©”ëª¨ë¦¬ì—ëŠ” ëŒ€ë¬¸ìë¡œ ì €ì¥
     char pageName = std::toupper(data);
     bool isWrite = std::islower(data);
 
-    // 1. Hit °Ë»ç
+    // 1. Hit ê²€ìƒ‰
     auto it = std::find(frames.begin(), frames.end(), pageName);
     if (it != frames.end()) {
         record.status = PageStatus::Hit;
         int hitIndex = std::distance(frames.begin(), it);
         record.targetRow = hitIndex;
 
-        // Hit ¹ß»ı ½Ã R ºñÆ®´Â ¹«Á¶°Ç 1, ¾²±â ÀÛ¾÷ÀÌ¾ú´Ù¸é M ºñÆ®µµ 1·Î °»½Å
+        // Hit ë°œìƒ ì‹œ R ë¹„íŠ¸ëŠ” ë¬´ì¡°ê±´ 1, ì“°ê¸° ì‘ì—…ì´ì—ˆìœ¼ë©´ M ë¹„íŠ¸ë„ 1ë¡œ ì„¤ì •
         refBits[hitIndex] = true;
         if (isWrite) modBits[hitIndex] = true;
 
         hitCount++;
     }
     else {
-        // 2. Page Fault (ºó °ø°£ÀÌ ÀÖ´Â °æ¿ì)
+        // 2. Page Fault (ë¹ˆ ê³µê°„ì´ ìˆëŠ” ê²½ìš°)
         if (currentCount < frameSize) {
             record.status = PageStatus::Fault;
 
             frames[currentCount] = pageName;
-            refBits[currentCount] = true;         // »õ·Î ÀûÀç ½Ã R=1
-            modBits[currentCount] = isWrite;      // ¾²±â ¿äÃ»ÀÌ¸é M=1, ¾Æ´Ï¸é M=0
+            refBits[currentCount] = true;         // ìƒˆë¡œ ì‚½ì… ì‹œ R=1
+            modBits[currentCount] = isWrite;      // ì“°ê¸° ìš”ì²­ì´ë©´ M=1, ì•„ë‹ˆë©´ M=0
             record.targetRow = currentCount;
 
             currentCount++;
             faultCount++;
         }
-        // 3. Migration (ºó °ø°£ÀÌ ¾ø¾î ±³Ã¼ÇØ¾ß ÇÏ´Â °æ¿ì)
+        // 3. Migration (ë¹ˆ ê³µê°„ì´ ì—†ì–´ êµì²´í•´ì•¼ í•˜ëŠ” ê²½ìš°)
         else {
             record.status = PageStatus::Migration;
 
             int victimRow = -1;
-            int minClass = 4; // Å¬·¡½º´Â 0~3±îÁö ÀÖÀ¸¹Ç·Î 4·Î ÃÊ±âÈ­
+            int minClass = 4; // í´ë˜ìŠ¤ëŠ” 0~3ê¹Œì§€ ì¡´ì¬í•˜ë¯€ë¡œ 4ë¡œ ì´ˆê¸°í™”
 
-            // clockHandºÎÅÍ ½ÃÀÛÇÏ¿© ÇÑ ¹ÙÄû¸¦ µ¹¸ç °¡Àå ³·Àº Å¬·¡½º(0~3)¸¦ Ã£À½
+            // clockHandë¶€í„° ì‹œì‘í•˜ì—¬ ê° í˜ì´ì§€ì˜ í˜„ì¬ ìƒíƒœ í´ë˜ìŠ¤(0~3)ë¥¼ ì°¾ìŒ
             for (int i = 0; i < frameSize; ++i) {
                 int idx = (clockHand + i) % frameSize;
 
-                // Å¬·¡½º °è»ê: RÀÌ 1ÀÌ¸é +2, MÀÌ 1ÀÌ¸é +1
+                // í´ë˜ìŠ¤ ê³„ì‚°: Rì´ 1ì´ë©´ +2, Mì´ 1ì´ë©´ +1
                 // 0 (R=0, M=0) | 1 (R=0, M=1) | 2 (R=1, M=0) | 3 (R=1, M=1)
                 int currentClass = (refBits[idx] ? 2 : 0) + (modBits[idx] ? 1 : 0);
 
                 if (currentClass < minClass) {
                     minClass = currentClass;
                     victimRow = idx;
-                    // °¡Àå ÃÖÇÏÀ§ Å¬·¡½ºÀÎ 0À» Ã£¾Ò´Ù¸é ´õ Ã£À» ÇÊ¿ä ¾øÀÌ Áï½Ã ±³Ã¼
+                    // ê°€ì¥ ë‚®ì€ í´ë˜ìŠ¤ì¸ 0ì„ ì°¾ì•˜ë‹¤ë©´ ë” ì°¾ì„ í•„ìš” ì—†ì´ ë°”ë¡œ êµì²´
                     if (minClass == 0) break;
                 }
             }
 
-            // Èñ»ıÀÚ(Victim) ÇÁ·¹ÀÓ ±³Ã¼
+            // í¬ìƒì(Victim) í˜ì´ì§€ êµì²´
             frames[victimRow] = pageName;
             refBits[victimRow] = true;
             modBits[victimRow] = isWrite;
             record.targetRow = victimRow;
 
-            // ´ÙÀ½ ±³Ã¼ ½Ã °øÆòÇÑ Å½»öÀ» À§ÇØ ¹Ù´ÃÀ» Èñ»ıÀÚ ´ÙÀ½ Ä­À¸·Î ÀÌµ¿
+            // í˜ì´ì§€ êµì²´ í›„ ë‹¤ìŒ í¬ìƒìë¥¼ ê°€ë¦¬í‚¤ë„ë¡ ì‹œê³„ í•¸ë“¤ì„ ì´ë™
             clockHand = (victimRow + 1) % frameSize;
 
             faultCount++;
             migrationCount++;
             
+            // 3ë²ˆì˜ Migrationë§ˆë‹¤ ëª¨ë“  R ë¹„íŠ¸ë¥¼ 0ìœ¼ë¡œ ì´ˆê¸°í™”
             if (migrationCount % 3 == 0) {
                 std::fill(refBits.begin(), refBits.end(), false);
             }
@@ -84,13 +85,13 @@ void PolicyNUR::Operate(char data) {
         }
     }
 
-    // ÀüÃ¼ ¿äÃ»(Hit + Fault)ÀÌ 5¹ø ¹ß»ıÇÒ ¶§¸¶´Ù ¸ğµç RºñÆ®¸¦ 0À¸·Î ¸®¼Â!
+    // ì „ì²´ ìš”ì²­(Hit + Fault)ì´ 5ë²ˆ ë°œìƒí•  ë•Œë§ˆë‹¤ ëª¨ë“  Rë¹„íŠ¸ë¥¼ 0ìœ¼ë¡œ ì´ˆê¸°í™”!
     int totalSteps = hitCount + faultCount;
     if (totalSteps > 0 && totalSteps % 5 == 0) {
-        std::fill(refBits.begin(), refBits.end(), false); // ¸ğµç R ºñÆ®¸¦ 0À¸·Î!
+        std::fill(refBits.begin(), refBits.end(), false); // ëª¨ë“  R ë¹„íŠ¸ë¥¼ 0ìœ¼ë¡œ!
     }
 
-    // ½º³À¼¦ ¹× Â÷Æ® µ¥ÀÌÅÍ ÀúÀå
+    // í˜„ì¬ ìŠ¤ëƒ…ìƒ· ì €ì¥
     record.memorySnap = frames;
     record.refBitSnap = refBits;
     record.modBitSnap = modBits;

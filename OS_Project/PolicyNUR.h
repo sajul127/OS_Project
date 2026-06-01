@@ -5,10 +5,10 @@
 class PolicyNUR : public PolicyBase {
 private:
     std::vector<char> frames;
-    std::vector<bool> refBits; // ÂüÁ¶ ºñÆ® (R)
-    std::vector<bool> modBits; // º¯Çü ºñÆ® (M)
+    std::vector<bool> refBits; // ì°¸ì¡° ë¹„íŠ¸ (R)
+    std::vector<bool> modBits; // ìˆ˜ì • ë¹„íŠ¸ (M)
     int currentCount = 0;
-    int clockHand = 0;         // Èñ»ıÀÚ Å½»öÀ» À§ÇÑ ½ÃÀÛÁ¡ (°øÆò¼ºÀ» À§ÇØ)
+    int clockHand = 0;         // í´ëŸ­ í•¸ë“œê°€ ê°€ë¦¬í‚¤ëŠ” í˜ì´ì§€ (ì‹œê³„ ë°©í–¥)
 
 public:
     PolicyNUR(int size);

@@ -1,0 +1,14 @@
+.vs/
+.idea/
+
+Debug/
+Release/
+x64/
+x86/
+
+*.obj
+*.pdb
+*.ilk
+*.idb
+*.tlog
+*.exe

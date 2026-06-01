@@ -3,10 +3,10 @@
 
 class PolicySecondChance : public PolicyBase {
 private:
-    std::vector<char> frames;    // ½ÇÁ¦ ¸Ş¸ğ¸® ÇÁ·¹ÀÓ ¹è¿­
-    std::vector<bool> refBits;   // °¢ ÇÁ·¹ÀÓÀÇ ÂüÁ¶ ºñÆ® (true: 1, false: 0)
-    int currentCount = 0;        // ÇöÀç Ã¤¿öÁø ÇÁ·¹ÀÓ °³¼ö
-    int clockHand = 0;           // ±³Ã¼ ´ë»óÀ» °¡¸®Å°´Â ½Ã°è ¹Ù´Ã ÀÎµ¦½º
+    std::vector<char> frames;    // ë©”ì¸ ë©”ëª¨ë¦¬ í˜ì´ì§€ ë°°ì—´
+    std::vector<bool> refBits;   // ê° í˜ì´ì§€ì˜ ì°¸ì¡° ë¹„íŠ¸ (true: 1, false: 0)
+    int currentCount = 0;        // í˜„ì¬ ì±„ì›Œì§„ í˜ì´ì§€ ê°œìˆ˜
+    int clockHand = 0;           // êµì²´ ëŒ€ìƒì„ ê°€ë¦¬í‚¤ëŠ” ì‹œê³„ ë°”ëŠ˜ ì¸ë±ìŠ¤
 
 public:
     PolicySecondChance(int size);

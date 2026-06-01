@@ -3,54 +3,54 @@
 
 PolicySecondChance::PolicySecondChance(int size) : PolicyBase(size) {
     frames.resize(size, ' ');
-    refBits.resize(size, false); // ÃÊ±â ÂüÁ¶ ºñÆ®´Â ¸ğµÎ 0(false)
+    refBits.resize(size, false); // ì´ˆê¸° ì°¸ì¡° ë¹„íŠ¸ëŠ” ëª¨ë‘ 0(false)
 }
 
 void PolicySecondChance::Operate(char data) {
     StepRecord record;
     record.reqChar = data;
 
-    // 1. Hit °Ë»ç
+    // 1. Hit ê²€ìƒ‰
     auto it = std::find(frames.begin(), frames.end(), data);
     if (it != frames.end()) {
         record.status = PageStatus::Hit;
         int hitIndex = std::distance(frames.begin(), it);
         record.targetRow = hitIndex;
 
-        // Hit ¹ß»ı ½Ã ÂüÁ¶ ºñÆ®¸¦ 1(true)·Î °»½Å (ÇÙ½É ·ÎÁ÷)
+        // Hit ë°œìƒ ì‹œ ì°¸ì¡° ë¹„íŠ¸ë¥¼ 1(true)ë¡œ ì„¤ì • (ë‹¤ì‹œ ê¸°íšŒ ë¶€ì—¬)
         refBits[hitIndex] = true;
         hitCount++;
     }
     else {
-        // 2. Page Fault (ºó °ø°£ÀÌ ÀÖ´Â °æ¿ì)
+        // 2. Page Fault (ë¹ˆ ê³µê°„ì´ ìˆëŠ” ê²½ìš°)
         if (currentCount < frameSize) {
             record.status = PageStatus::Fault;
 
             frames[currentCount] = data;
-            refBits[currentCount] = true; // »õ·Î ¸Ş¸ğ¸®¿¡ ÀûÀçµÉ ¶§ ÂüÁ¶ ºñÆ®´Â 1
+            refBits[currentCount] = true; // ìƒˆë¡œ ë©”ëª¨ë¦¬ì— ì ì¬ë  ë•Œ ì°¸ì¡° ë¹„íŠ¸ë¥¼ 1ë¡œ ì„¤ì •
             record.targetRow = currentCount;
 
             currentCount++;
             faultCount++;
         }
-        // 3. Migration (ºó °ø°£ÀÌ ¾ø¾î ÂÑ¾Æ³»¾ß ÇÏ´Â °æ¿ì)
+        // 3. Migration (ë¹ˆ ê³µê°„ì´ ì—†ì–´ ë°€ì–´ë‚´ì•¼ í•˜ëŠ” ê²½ìš°)
         else {
             record.status = PageStatus::Migration;
 
-            // Èñ»ıÀÚ(Victim)¸¦ Ã£À» ¶§±îÁö ½Ã°è ¹Ù´Ã ÀÌµ¿
+            // í¬ìƒì(Victim)ë¥¼ ì°¾ì„ ë•Œê¹Œì§€ ì‹œê³„ ë°”ëŠ˜ ì´ë™
             while (true) {
                 if (refBits[clockHand] == true) {
-                    // ±âÈ¸¸¦ ÇÑ ¹ø ÁÖ°í(0À¸·Î º¯°æ), ¹Ù´ÃÀ» ´ÙÀ½À¸·Î ÀÌµ¿
+                    // ê¸°íšŒë¥¼ í•œ ë²ˆ ë” ì£¼ê³ (0ìœ¼ë¡œ ì´ˆê¸°í™”), ë°”ëŠ˜ì„ ë‹¤ìŒìœ¼ë¡œ ì´ë™
                     refBits[clockHand] = false;
                     clockHand = (clockHand + 1) % frameSize;
                 }
                 else {
-                    // ÂüÁ¶ ºñÆ®°¡ 0ÀÎ ÇÁ·¹ÀÓÀ» ¹ß°ßÇÏ¸é ±³Ã¼ (Èñ»ıÀÚ ´çÃ·)
+                    // ì°¸ì¡° ë¹„íŠ¸ê°€ 0ì¸ í˜ì´ì§€ë¥¼ ë°œê²¬í•˜ë©´ êµì²´ (í¬ìƒì ë‹¹ì²¨)
                     frames[clockHand] = data;
-                    refBits[clockHand] = true; // »õ·Î µé¾î¿ÔÀ¸¹Ç·Î 1·Î ¼³Á¤
+                    refBits[clockHand] = true; // ìƒˆë¡œ ì‚½ì…ë˜ì—ˆìœ¼ë¯€ë¡œ 1ë¡œ ì„¤ì •
                     record.targetRow = clockHand;
 
-                    // ´ÙÀ½ ±³Ã¼¸¦ À§ÇØ ¹Ù´ÃÀ» ÇÑ Ä­ ÀüÁø½ÃÄÑµÒ
+                    // í˜ì´ì§€ êµì²´ í›„ ì‹œê³„ ë°”ëŠ˜ì„ í•œ ì¹¸ ë‹¤ìŒìœ¼ë¡œ ì´ë™
                     clockHand = (clockHand + 1) % frameSize;
                     break;
                 }
@@ -61,10 +61,10 @@ void PolicySecondChance::Operate(char data) {
         }
     }
 
-    // ½º³À¼¦ ¹× Â÷Æ® µ¥ÀÌÅÍ ÀúÀå
+    // í˜„ì¬ ìŠ¤ëƒ…ìƒ· ì €ì¥
     record.memorySnap = frames;
-    record.refBitSnap = refBits; // (Step 1À» Àû¿ëÇß´Ù¸é ÁÖ¼® ÇØÁ¦)
-    record.clockHand = clockHand; // (Step 1À» Àû¿ëÇß´Ù¸é ÁÖ¼® ÇØÁ¦)
+    record.refBitSnap = refBits; 
+    record.clockHand = clockHand;
     history.push_back(record);
 
     int currentStep = hitCount + faultCount;
